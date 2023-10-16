@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          background-image:url('https://imgs.search.brave.com/c40zv8uJ_WDUMR996PnNCyU0cNdqXanLghZaSHXXaBg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NTc2ODMzMTYtOTcz/NjczYmFmOTI2P2l4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRCOGZH/ZHlZV1JwWlc1MGZH/VnVmREI4ZkRCOGZI/d3cmdz0xMDAwJnE9/ODA');
+          background-position: center;
+          background-size: cover;
+          box-sizing: border-box;
+          position: relative;
+          animation: change 10s infinite ease-in-out;
+          height: 100vh;
+      }
+
+      #container {
+          text-align: center;
+          font-family: Arial, sans-serif;
+          width: 100%;
+          height: 100vh;
+          background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)),
+          background-position: center;
+          background-size: cover;
+          box-sizing: border-box;
+          position: relative;
+          animation: change 10s infinite ease-in-out;
+      }
+
+      form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 20%;
+          height: 83%;
+          position: absolute;
+          top: 47%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 50px 60px 70px;
+          text-align: center;
+          padding-top: 0px;
+          border-radius: 25px;
+          border: 2px solid #fff;
+          background: url('https://wallpaperaccess.com/full/1385574.jpg');
+      }
+
+      h1 {
+          font-size: 30px;
+          margin-bottom: 10px;
+          color: #fff;
+          margin-top: 15px;
+      }
+
+      label {
+          color: #fff;
+          margin-top: 13px;
+          cursor: pointer;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="number"],
+      input[type="checkbox"],
+      select {
+          margin-bottom: 10px;
+          padding: 8px;
+          width: 90%;
+          border: 1px solid #fff;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+
+      button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 7px;
+      }
+
+      .upload-text {
+          color: #fff;
+          cursor: pointer;
+          margin-top: 10px;
+      }
+
+      .uploaded-message {
+          color: green;
+          margin-top: 10px;
+      }
+
+      .toggle-link {
+          color: #007bff;
+          cursor: pointer;
+          margin-top: 10px;
+      }
+
+      .label {
+          font-size: 16px;
+          margin-bottom: 5px;
+          color: #fff;
+      }
+
+      .upload-container {
+          display: flex;
+          align-items: center;
+          color: #fff;
+      }
+
+      .textcolor {
+          color: #fff;
+          margin-top: 13px;
+          cursor: pointer;
+      }
+
+      .form-container {
+          display: flex;
+          justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="signup-form">
+        <h1>Sign Up</h1>
+        <label>
+          Username:
+          <input type="text" name="username" required />
+        </label>
+
+        <label
+          >Password:
+          <input type="password" name="password" required />
+        </label>
+
+        <label
+          >Email ID:
+          <input type="email" name="emailId" required />
+        </label>
+
+        <label
+          >Role in the Court:
+          <input type="text" name="roleInTheCourt" required />
+        </label>
+
+        <label
+          >Employee ID:
+          <input type="text" name="employeeId" required />
+        </label>
+
+        <label
+          >Phone Number:
+          <input type="text" name="phNo" required />
+        </label>
+
+        <label
+          >Security Question:<br />
+          <label
+            >What is your favorite TV show?
+            <input type="text" name="securityAnswer" />
+          </label>
+        </label>
+
+        <button type="submit">Submit</button>
+        <p class="textcolor toggle-link" onclick="toggleForm()">
+          Already have an account? Login
+        </p>
+      </form>
+    </div>
+
+    <script>
+      const toggleForm = () => {
+        // Implement your toggle logic here
+      };
+
+      const signupForm = document.getElementById("signup-form");
+
+      signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = {
+          username: signupForm.querySelector("[name='username']").value,
+          password: signupForm.querySelector("[name='password']").value,
+          emailId: signupForm.querySelector("[name='emailId']").value,
+          roleInTheCourt: signupForm.querySelector("[name='roleInTheCourt']")
+            .value,
+          employeeId: signupForm.querySelector("[name='employeeId']").value,
+          phNo: signupForm.querySelector("[name='phNo']").value,
+          securityAnswer: signupForm.querySelector("[name='securityAnswer']")
+            .value,
+          department: signupForm.querySelector("[name='department']").value,
+          govtId: "", // Implement logic to get the file URL
+          profilePicture: "", // Implement logic to get the file URL
+        };
+
+        // You can now use the formData object and send it to your server using fetch or XMLHttpRequest
+        console.log("Form Data:", formData);
+
+        // Reset the form if needed
+        signupForm.reset();
+      });
+    </script>
+  </body>
+</html>
